@@ -5,13 +5,17 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "httpx>=0.28.1",
-    "huggingface-hub>=0.36.0",
+    "fastmcp>=2.13.0.2",
+    "gradio-client>=1.10.1",
+    "gradio[mcp]>=5.30.0",
+    "huggingface-hub[mcp]>=0.36.0",
+    "ipykernel>=7.1.0",
     "jupyter>=1.1.1",
     "mcp[cli]>=1.21.1",
     "numpy>=2.3.4",
+    "openai>=2.8.0",
     "pandas>=2.3.3",
-    "pip>=25.3",
-    "smolagents>=0.1.0",
-    "transformers>=4.57.1",
+    "python-dotenv>=1.2.1",
+    "tokenizers==0.22.1",
+    "transformers==4.57.1",
 ]
