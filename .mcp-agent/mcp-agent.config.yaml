@@ -1,0 +1,41 @@
+execution_engine: asyncio
+logger:
+    transports: [console, file]
+    level: info
+    progress_display: true
+    path_settings:
+        path_pattern: "logs/mcp-agent-{unique_id}.jsonl"
+        unique_id: "timestamp" # Options: "timestamp" or "session_id"
+        timestamp_format: "%Y%m%d_%H%M%S"
+
+# all paths below are relative to the project root
+mcp:
+    servers:
+        filesystem:
+            command: "npx"
+            args: ["-y", "@modelcontextprotocol/server-filesystem", "./mnt/"]
+        fetch:
+            command: "uvx"
+            args: ["mcp-server-fetch"]
+        python-lsp:
+            command: "./.venv/bin/python"
+            args:
+                [
+                    "./mcp/python-lsp-mcp-server/src/server.py",
+                    "--project-root",
+                    "./mnt/",
+                    "--transport",
+                    "stdio",
+                ]
+        github:
+            transport: streamable_http
+            url: "https://api.githubcopilot.com/mcp"
+            headers:
+                Authorization: "Bearer ${GITHUB_PAT}"
+                X-MCP-Toolsets: "discussions,issues,pull_requests,repos"
+                X-MCP-Readonly: "true"
+                X-MCP-Lockdown: "false"
+
+openai:
+    default_model: Qwen/Qwen3-Coder-30B-A3B-Instruct:nebius
+    base_url: https://router.huggingface.co/v1
