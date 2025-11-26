@@ -5,7 +5,14 @@ build/
 dist/
 wheels/
 *.egg-info
+
+# logs
+**/log/*
+**/logs/*
+
+# secrets
 .env
+**/*secret*
 
 # Virtual environments
 .venv
