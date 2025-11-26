@@ -23,9 +23,12 @@ dependencies = [
     { name = "jupyter" },
     { name = "llama-index-embeddings-huggingface" },
     { name = "llama-index-llms-huggingface-api" },
+    { name = "llama-index-llms-openai" },
+    { name = "llama-index-llms-openai-like" },
     { name = "llama-index-tools-arxiv" },
     { name = "llama-index-tools-duckduckgo" },
     { name = "llama-index-tools-mcp" },
+    { name = "llama-index-tools-tavily-research" },
     { name = "loguru" },
     { name = "mcp", extra = ["cli"] },
     { name = "mcp-agent", extra = ["openai"] },
@@ -54,9 +57,12 @@ requires-dist = [
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "llama-index-embeddings-huggingface", specifier = ">=0.6.1" },
     { name = "llama-index-llms-huggingface-api", specifier = ">=0.6.1" },
+    { name = "llama-index-llms-openai", specifier = ">=0.6.9" },
+    { name = "llama-index-llms-openai-like", specifier = ">=0.5.3" },
     { name = "llama-index-tools-arxiv", specifier = ">=0.4.1" },
     { name = "llama-index-tools-duckduckgo", specifier = ">=0.4.1" },
     { name = "llama-index-tools-mcp", specifier = ">=0.4.3" },
+    { name = "llama-index-tools-tavily-research", specifier = ">=0.4.2" },
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "mcp", extras = ["cli"], specifier = ">=1.21.1" },
     { name = "mcp-agent", extras = ["openai"], specifier = ">=0.2.5" },
@@ -2072,6 +2078,33 @@ wheels = [
 ]
 
 [[package]]
+name = "llama-index-llms-openai"
+version = "0.6.9"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "llama-index-core" },
+    { name = "openai" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/2b/6a/3b0225298b10ace4b5c08f564dfc5ddcdbd1792b027097628c120a00d0af/llama_index_llms_openai-0.6.9.tar.gz", hash = "sha256:4c8c91a5e5b0e59b44ecd8fe43156e93c6abf1c9ca8e1e4ad3e4834c84f51199", size = 25535, upload-time = "2025-11-14T01:05:12.882Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/76/74/103b4f967f589f92e43b55f4dcfa5ad3544a475ff9103e15dcfc57e3c28e/llama_index_llms_openai-0.6.9-py3-none-any.whl", hash = "sha256:02eec6ef46ac67be76607ea28c6fbe4c95a6713adc2da629e3682a6b3802cf38", size = 26532, upload-time = "2025-11-14T01:05:11.603Z" },
+]
+
+[[package]]
+name = "llama-index-llms-openai-like"
+version = "0.5.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "llama-index-core" },
+    { name = "llama-index-llms-openai" },
+    { name = "transformers" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9b/fd/aed635d298380cfdc84a4e475a8367d8fcdd4677cd8914de2f495edea28d/llama_index_llms_openai_like-0.5.3.tar.gz", hash = "sha256:84bdfc88bb5d9ea806bdd1be4b4378357781c0637c78c548242aac857f165090", size = 4993, upload-time = "2025-09-28T23:48:26.659Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/aa/22/3d15a3f0f2c4befecb8e7a81a4a0bbd3121f567b22b9ac34817ecf15a155/llama_index_llms_openai_like-0.5.3-py3-none-any.whl", hash = "sha256:9ef2374916427e1a21db0ea5f624056fb323e13308c6722b3de0384dfecd467b", size = 4689, upload-time = "2025-09-28T23:48:25.557Z" },
+]
+
+[[package]]
 name = "llama-index-tools-arxiv"
 version = "0.4.1"
 source = { registry = "https://pypi.org/simple" }
@@ -2109,6 +2142,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/8b/9b/eb46e382534a736921e437288bfcaa9b4b3672d739458fb150f80b98e692/llama_index_tools_mcp-0.4.3.tar.gz", hash = "sha256:252103b595fc07ae06321dd7a5e17530ef854a86fc25e9cf3e733fdbbd919fdc", size = 12745, upload-time = "2025-10-22T15:44:08.931Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/1e/88/e2c59a87e48e3913effec9345517d48918fb27aab5a337e53e5bb109aee7/llama_index_tools_mcp-0.4.3-py3-none-any.whl", hash = "sha256:01cbecd9bfb58011e2a83c80bd3f906d1de259b014c004a4cfef2d8268e6391f", size = 13894, upload-time = "2025-10-22T15:44:08.059Z" },
+]
+
+[[package]]
+name = "llama-index-tools-tavily-research"
+version = "0.4.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "llama-index-core" },
+    { name = "tavily-python" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c8/7c/2dae517040a0e1fdce5168873707bdb6baa05f5af0e53861b15f5e588b8d/llama_index_tools_tavily_research-0.4.2.tar.gz", hash = "sha256:444c893f0eeacdead10686199e2138f627f5406d0e240efac9c83c417a0a06c0", size = 5177, upload-time = "2025-10-08T21:17:40.959Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f0/97/28727c7503e9243ac177a6ae5f0a9fcbe94f11d09aa8dbbbb8c7294ff869/llama_index_tools_tavily_research-0.4.2-py3-none-any.whl", hash = "sha256:fffce90c7dcd2cedc33728e87edec0e8285ff20e6f8831baaeefb445f71eb97c", size = 4861, upload-time = "2025-10-08T21:17:40.166Z" },
 ]
 
 [[package]]
@@ -4714,6 +4760,20 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/83/d3/803453b36afefb7c2bb238361cd4ae6125a569b4db67cd9e79846ba2d68c/sympy-1.14.0.tar.gz", hash = "sha256:d3d3fe8df1e5a0b42f0e7bdf50541697dbe7d23746e894990c030e2b05e72517", size = 7793921, upload-time = "2025-04-27T18:05:01.611Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl", hash = "sha256:e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5", size = 6299353, upload-time = "2025-04-27T18:04:59.103Z" },
+]
+
+[[package]]
+name = "tavily-python"
+version = "0.7.13"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx" },
+    { name = "requests" },
+    { name = "tiktoken" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/54/fb/b6d6327a78b9107681701d56b3a2dda48dc5420a6ee8b33a147d87bfba60/tavily_python-0.7.13.tar.gz", hash = "sha256:347f92402331d071557f6dd6680f813a7d484b4ba7240905cc397cd192d1355c", size = 17237, upload-time = "2025-11-13T18:53:03.998Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/55/4d/e5e4c65cd66144ac3d0d5a6a2bbfba22eb6a63e6e450beba10ee8413b86d/tavily_python-0.7.13-py3-none-any.whl", hash = "sha256:911825467f2bb19b8162b4766d3e81081160a7c0fb8a15c7c716b2bef73e6296", size = 15484, upload-time = "2025-11-13T18:53:02.821Z" },
 ]
 
 [[package]]
