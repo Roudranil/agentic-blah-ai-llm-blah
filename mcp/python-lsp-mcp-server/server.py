@@ -8,10 +8,10 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from engine import LSPEngine
 from fastmcp import FastMCP
 from fastmcp.utilities.logging import get_logger as get_fastmcp_logger
 from loguru import logger
+from src.engine import LSPEngine
 
 
 # ---------------------------------------------------------------------
